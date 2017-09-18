@@ -28,9 +28,10 @@ if (process.env.JAWSDB_URL) {
 // Make the connection to MySQL
 connection.connect(function(err) {
     if (err) {
-        console.log('ERROR: MySQL connection error -- ' + err.stack + '\n\n');
+        console.log('ERROR: MySQL connection error -- ' + err.stack + + '\n\n');
         return;
     }
+
     console.log('Connected to MySQL database as id ' + connection.threadId + '\n\n');
 });
 
