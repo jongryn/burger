@@ -12,7 +12,12 @@ var connection;
 
 if (process.env.JAWSDB_URL) {
     // DB is JawsDB on Heroku
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+    connection = mysql.createConnection({
+        host: process.env.HOST,
+        user: process.env.USERNAME,
+        password: process.env.PASSWORD,
+        database: process.env.DB_NAME
+    });
 } else {
     
     // DB is local on localhost
